@@ -43,17 +43,18 @@ const { title } = Astro.props;
 				</button>
 			</div>
 
-			<!-- Mobile Nav Overlay -->
-			<div id="mobile-nav-overlay" class="fixed inset-0 bg-[#070708]/98 backdrop-blur-xl z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-center items-center">
-				<div class="flex flex-col items-center gap-8 text-sm font-medium tracking-widest text-neutral-400 font-mono">
-					<a href="/" class="mobile-nav-link hover:text-white transition-colors">HOME</a>
-					<a href="/projects" class="mobile-nav-link hover:text-white transition-colors">PROJECTS</a>
-					<a href="/about" class="mobile-nav-link hover:text-white transition-colors">ABOUT</a>
-					<a href="/journal" class="mobile-nav-link hover:text-white transition-colors">JOURNAL</a>
-					<a href="/contact" class="mobile-nav-link text-white mt-4 border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all">REACH OUT</a>
-				</div>
-			</div>
 		</nav>
+
+		<!-- Mobile Nav Overlay -->
+		<div id="mobile-nav-overlay" class="fixed inset-0 bg-[#070708]/80 backdrop-blur-xl z-40 opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-center items-center pt-20">
+			<div class="flex flex-col items-center gap-8 text-sm font-medium tracking-widest text-neutral-400 font-mono">
+				<a href="/" class="mobile-nav-link hover:text-white transition-colors">HOME</a>
+				<a href="/projects" class="mobile-nav-link hover:text-white transition-colors">PROJECTS</a>
+				<a href="/about" class="mobile-nav-link hover:text-white transition-colors">ABOUT</a>
+				<a href="/journal" class="mobile-nav-link hover:text-white transition-colors">JOURNAL</a>
+				<a href="/contact" class="mobile-nav-link text-white mt-4 border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all">REACH OUT</a>
+			</div>
+		</div>
 		<slot />
 
 		<script>
