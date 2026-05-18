@@ -1,23 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-[#070708]">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Backend Engineer Portfolio" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="text-white font-sans antialiased selection:bg-white selection:text-black min-h-screen relative overflow-x-hidden">
+		<div class="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-white/[0.02] blur-[140px] rounded-full pointer-events-none"></div>
+
+		<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#070708]/40 border-b border-white/[0.03]">
+			<div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+				<a href="/" class="text-lg font-medium tracking-tighter font-mono hover:text-white transition-colors">black<span class="text-neutral-500">.json</span></a>
+				<div class="flex items-center gap-8 text-xs font-medium tracking-wide text-neutral-400">
+					<a href="/projects" class="hover:text-white transition-colors">PROJECTS</a>
+					<a href="/about" class="hover:text-white transition-colors">ABOUT</a>
+					<a href="/journal" class="hover:text-white transition-colors">JOURNAL</a>
+					<a href="/contact" class="bg-white/5 border border-white/10 text-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300">REACH OUT</a>
+				</div>
+			</div>
+		</nav>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		font-family: 'Plus Jakarta Sans', sans-serif;
+	}
+	h1, h2 {
+		font-family: 'Instrument Serif', serif;
+	}
+	.font-mono {
+		font-family: 'JetBrains Mono', monospace;
 	}
 </style>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About | Black Systems">
+	<main class="max-w-4xl mx-auto px-6 pt-40 pb-32 relative z-10">
+		<div class="mb-16">
+			<a href="/" class="text-xs font-mono text-neutral-500 hover:text-white transition-colors flex items-center gap-2 mb-12 w-fit">
+				<span>←</span> RETURN TO INDEX
+			</a>
+			
+			<div class="w-24 h-24 md:w-32 md:h-32 mb-8 rounded-full overflow-hidden border border-white/[0.08] bg-[#0e0e10]">
+				<img 
+					src="/profile.jpg" 
+					alt="Augustine Okechukwu" 
+					class="w-full h-full object-cover object-top"
+				/>
+			</div>
+
+			<h1 class="text-4xl md:text-5xl font-normal tracking-tight text-white mb-6">About Me</h1>
+			
+			<div class="prose prose-invert max-w-none text-neutral-400 font-light leading-relaxed space-y-6">
+				<p class="text-xl text-neutral-300">
+					I am a backend software engineer focused on building fast and reliable systems.
+				</p>
+				<p>
+					With over a year of professional experience, I specialize in the Node.js and NestJS ecosystem, working heavily with APIs, message queues, and databases. I enjoy building backend services that can handle high traffic while keeping the codebase clean and maintainable.
+				</p>
+				<p>
+					Beyond writing code, I care deeply about developer experience. I regularly set up CI/CD pipelines, write tests, and build internal tools that make development workflows easier and faster.
+				</p>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+			<div class="bg-[#0e0e10] border border-white/[0.04] rounded-3xl p-8 relative overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none"></div>
+				<h3 class="text-lg font-medium tracking-tight text-neutral-200 mb-6 font-mono text-[10px] uppercase tracking-widest text-neutral-500">Skills</h3>
+				<ul class="space-y-4">
+					<li class="flex items-center gap-3">
+						<span class="w-1.5 h-1.5 rounded-full bg-emerald-500/80"></span>
+						<span class="text-sm text-neutral-300">Backend API Development</span>
+					</li>
+					
+					<li class="flex items-center gap-3">
+						<span class="w-1.5 h-1.5 rounded-full bg-emerald-500/80"></span>
+						<span class="text-sm text-neutral-300">Databases (PostgreSQL, Redis)</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="w-1.5 h-1.5 rounded-full bg-emerald-500/80"></span>
+						<span class="text-sm text-neutral-300">Deployment (Docker, CI/CD)</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="bg-[#0e0e10] border border-white/[0.04] rounded-3xl p-8 relative overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-bl from-white/[0.01] to-transparent pointer-events-none"></div>
+				<h3 class="text-lg font-medium tracking-tight text-neutral-200 mb-6 font-mono text-[10px] uppercase tracking-widest text-neutral-500">My Approach</h3>
+				<p class="text-sm text-neutral-400 leading-relaxed italic border-l-2 border-white/10 pl-4 py-2">
+					"I believe backend systems should be fast for users and easy for engineers to maintain. Good code is predictable, tested, and well-monitored."
+				</p>
+			</div>
+		</div>
+
+		<footer class="pt-12 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-6">
+			<p class="text-xs text-neutral-500 font-mono">© 2026 Black Systems. All rights reserved.</p>
+			<div class="flex gap-6 text-xs text-neutral-400 font-mono">
+				<a href="https://github.com/hurstin" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GITHUB</a>
+				<a href="https://www.linkedin.com/in/augustine-okechukwu-248566190/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LINKEDIN</a>
+			</div>
+		</footer>
+	</main>
+</Layout>
