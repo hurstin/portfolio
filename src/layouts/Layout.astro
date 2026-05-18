@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-[#070708]">
+<html lang="en" class="bg-[#070708] overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Backend Engineer Portfolio" />
@@ -22,20 +22,76 @@ const { title } = Astro.props;
 	</head>
 	<body class="text-white font-sans antialiased selection:bg-white selection:text-black min-h-screen relative overflow-x-hidden">
 		<div class="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-white/[0.02] blur-[140px] rounded-full pointer-events-none"></div>
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[200vw] md:w-[1000px] h-[300px] md:h-[400px] bg-white/[0.02] blur-[140px] rounded-full pointer-events-none"></div>
 
 		<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#070708]/40 border-b border-white/[0.03]">
 			<div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-				<a href="/" class="text-lg font-medium tracking-tighter font-mono hover:text-white transition-colors">black<span class="text-neutral-500">.json</span></a>
-				<div class="flex items-center gap-8 text-xs font-medium tracking-wide text-neutral-400">
+				<a href="/" class="text-lg font-medium tracking-tighter font-mono hover:text-white transition-colors relative z-[60]">black<span class="text-neutral-500">.json</span></a>
+				
+				<!-- Desktop Nav -->
+				<div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-neutral-400">
 					<a href="/projects" class="hover:text-white transition-colors">PROJECTS</a>
 					<a href="/about" class="hover:text-white transition-colors">ABOUT</a>
 					<a href="/journal" class="hover:text-white transition-colors">JOURNAL</a>
 					<a href="/contact" class="bg-white/5 border border-white/10 text-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300">REACH OUT</a>
 				</div>
+
+				<!-- Mobile Menu Toggle -->
+				<button id="mobile-menu-toggle" class="md:hidden relative z-[60] text-neutral-400 hover:text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+					<svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-opacity duration-300"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+					<svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 m-auto opacity-0 transition-opacity duration-300"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+				</button>
+			</div>
+
+			<!-- Mobile Nav Overlay -->
+			<div id="mobile-nav-overlay" class="fixed inset-0 bg-[#070708]/98 backdrop-blur-xl z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-center items-center">
+				<div class="flex flex-col items-center gap-8 text-sm font-medium tracking-widest text-neutral-400 font-mono">
+					<a href="/" class="mobile-nav-link hover:text-white transition-colors">HOME</a>
+					<a href="/projects" class="mobile-nav-link hover:text-white transition-colors">PROJECTS</a>
+					<a href="/about" class="mobile-nav-link hover:text-white transition-colors">ABOUT</a>
+					<a href="/journal" class="mobile-nav-link hover:text-white transition-colors">JOURNAL</a>
+					<a href="/contact" class="mobile-nav-link text-white mt-4 border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all">REACH OUT</a>
+				</div>
 			</div>
 		</nav>
 		<slot />
+
+		<script>
+			const toggleBtn = document.getElementById('mobile-menu-toggle');
+			const navOverlay = document.getElementById('mobile-nav-overlay');
+			const iconOpen = document.getElementById('menu-icon-open');
+			const iconClose = document.getElementById('menu-icon-close');
+			const body = document.body;
+			const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+			let isMenuOpen = false;
+
+			function toggleMenu() {
+				isMenuOpen = !isMenuOpen;
+				
+				if (isMenuOpen) {
+					navOverlay?.classList.remove('opacity-0', 'pointer-events-none');
+					navOverlay?.classList.add('opacity-100', 'pointer-events-auto');
+					iconOpen?.classList.add('opacity-0');
+					iconClose?.classList.remove('opacity-0');
+					body.style.overflow = 'hidden';
+				} else {
+					navOverlay?.classList.add('opacity-0', 'pointer-events-none');
+					navOverlay?.classList.remove('opacity-100', 'pointer-events-auto');
+					iconOpen?.classList.remove('opacity-0');
+					iconClose?.classList.add('opacity-0');
+					body.style.overflow = '';
+				}
+			}
+
+			toggleBtn?.addEventListener('click', toggleMenu);
+
+			navLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					if (isMenuOpen) toggleMenu();
+				});
+			});
+		</script>
 	</body>
 </html>
 
