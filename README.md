@@ -1,36 +1,65 @@
-# Astro Starter Kit: Basics
+# Black | Backend Engineer Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the source code for my personal portfolio website. I'm **Augustine Okechukwu (Black)**, a Backend Engineer specializing in Node.js, TypeScript, and NestJS. This portfolio showcases my selected projects, technical stack, and professional experience.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Live Site
+*(Add your live deployment link here, e.g., `https://your-portfolio.com`)*
 
-## 🚀 Project Structure
+## 🛠️ Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+This project is built using modern web technologies focused on performance and a premium aesthetic:
+
+- **Framework:** [Astro](https://astro.build/) (Static Site Generation for blazing fast performance)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) (using `@tailwindcss/vite`)
+- **Language:** TypeScript / HTML / CSS
+- **Typography:** Plus Jakarta Sans, Instrument Serif, and JetBrains Mono
+- **Deployment:** *(e.g., Vercel, Netlify, Render)*
+
+## ✨ Key Features
+
+- **Dynamic UI:** Glassmorphism effects, radial gradients, and subtle hover animations.
+- **Projects Showcase:** Dedicated sections and pages to display fullstack and backend projects with direct links to GitHub, Live Sites, and APIs.
+- **Fully Responsive:** Optimized layout for desktop, tablet, and mobile devices (including a custom mobile navigation overlay).
+- **Fast Performance:** Leveraging Astro's zero-JS-by-default architecture.
+
+## 📂 Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/                # Static assets (favicons, etc.)
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── layouts/           # Global page layouts (Layout.astro contains nav/footer)
+│   ├── pages/             # Route pages (index, about, contact, projects)
+│   └── styles/            # Global CSS styles (global.css)
+├── astro.config.mjs       # Astro configuration
+└── package.json           # Project dependencies and scripts
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 Getting Started
 
-## 🧞 Commands
+To run this project locally, follow these steps:
 
-All commands are run from the root of the project, from a terminal:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hurstin/portfolio-2026.git
+   cd portfolio-2026
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:4321` to view the site.
+
+## 📝 Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -38,9 +67,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🤝 Let's Connect
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **GitHub:** [@hurstin](https://github.com/hurstin)
+- **LinkedIn:** [Augustine Okechukwu](https://www.linkedin.com/in/augustine-okechukwu-248566190/)
+- **X (Twitter):** [@hurstin_](https://x.com/hurstin_)
+
+---
+*Designed & Built by Black Systems © 2026*
